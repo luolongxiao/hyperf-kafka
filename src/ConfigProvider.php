@@ -9,10 +9,10 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Kafka;
+namespace Shouyi\Kafka;
 
-use Hyperf\Kafka\Listener\AfterWorkerExitListener;
-use Hyperf\Kafka\Listener\BeforeMainServerStartListener;
+use Shouyi\Kafka\Listener\AfterWorkerExitListener;
+use Shouyi\Kafka\Listener\BeforeMainServerStartListener;
 
 class ConfigProvider
 {

@@ -9,12 +9,12 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Kafka;
+namespace Shouyi\Kafka;
 
 use Hyperf\Contract\ConfigInterface;
 use Hyperf\Engine\Channel;
-use Hyperf\Kafka\Exception\ConnectionCLosedException;
-use Hyperf\Kafka\Exception\TimeoutException;
+use Shouyi\Kafka\Exception\ConnectionCLosedException;
+use Shouyi\Kafka\Exception\TimeoutException;
 use longlang\phpkafka\Broker;
 use longlang\phpkafka\Producer\ProduceMessage;
 use longlang\phpkafka\Producer\Producer as LongLangProducer;

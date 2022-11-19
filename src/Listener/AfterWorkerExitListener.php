@@ -9,12 +9,12 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Kafka\Listener;
+namespace Shouyi\Kafka\Listener;
 
 use Hyperf\Event\Contract\ListenerInterface;
 use Hyperf\Framework\Event\OnWorkerExit;
-use Hyperf\Kafka\Producer;
-use Hyperf\Kafka\ProducerManager;
+use Shouyi\Kafka\Producer;
+use Shouyi\Kafka\ProducerManager;
 use Psr\Container\ContainerInterface;
 
 class AfterWorkerExitListener implements ListenerInterface

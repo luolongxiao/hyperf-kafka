@@ -9,16 +9,16 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Kafka;
+namespace Shouyi\Kafka;
 
 use Hyperf\Contract\ConfigInterface;
 use Hyperf\Contract\StdoutLoggerInterface;
 use Hyperf\Di\Annotation\AnnotationCollector;
-use Hyperf\Kafka\Annotation\Consumer as ConsumerAnnotation;
-use Hyperf\Kafka\Event\AfterConsume;
-use Hyperf\Kafka\Event\BeforeConsume;
-use Hyperf\Kafka\Event\FailToConsume;
-use Hyperf\Kafka\Exception\InvalidConsumeResultException;
+use Shouyi\Kafka\Annotation\Consumer as ConsumerAnnotation;
+use Shouyi\Kafka\Event\AfterConsume;
+use Shouyi\Kafka\Event\BeforeConsume;
+use Shouyi\Kafka\Event\FailToConsume;
+use Shouyi\Kafka\Exception\InvalidConsumeResultException;
 use Hyperf\Process\AbstractProcess;
 use Hyperf\Process\ProcessManager;
 use longlang\phpkafka\Client\SwooleClient;
@@ -174,7 +174,7 @@ class ConsumerManager
                 $consumerConfig->setMemberId($this->consumer->getMemberId() ?: '');
                 $consumerConfig->setInterval($config['interval']);
                 $consumerConfig->setBootstrapServers($config['bootstrap_servers']);
-                $consumerConfig->setSocket(SwooleSocket::class);
+                $consumerConfig->setSocket($config['socket_class']);
                 $consumerConfig->setClient(SwooleClient::class);
                 $consumerConfig->setMaxWriteAttempts($config['max_write_attempts']);
                 $consumerConfig->setClientId(sprintf('%s-%s', $config['client_id'] ?: 'Hyperf', uniqid()));
